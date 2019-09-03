@@ -1,0 +1,5 @@
+exports.externals = {}
+
+exports.vue = {
+
+}
