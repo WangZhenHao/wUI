@@ -4,7 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import wUI from './comps/index'
+import wUI from 'main/index.js'
+// import wUI from '../lib/w-ui.common.js'
+
+import 'packages/theme-chalk/src/index.scss'
+
 Vue.use(wUI)
 
 Vue.config.productionTip = false
@@ -13,6 +17,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  render: h => h(App)
+  // components: { App },
+  // template: '<App/>'
 })

@@ -27,7 +27,7 @@ ${ComponentName}.install = function(Vue) {
 	Vue.component(${ComponentName}.name, ${ComponentName});
 };
 
-export defualt ${ComponentName};`
+export default ${ComponentName};`
   },
   //创建vue文件
   {
@@ -37,8 +37,8 @@ export defualt ${ComponentName};`
 </template>
 
 <script>
-	export defualt {
-		name: El${ComponentName}
+	export default {
+		name: 'El${ComponentName}'
 	};
 </script>`
   },
@@ -48,9 +48,10 @@ export defualt ${ComponentName};`
   	content: `@import "mixins/mixins";
 @import "common/var";
 
-@include b(${componentname}) {
+`
+// @include b(${componentname}) {
 
-}`
+// }
   }
 ]
 

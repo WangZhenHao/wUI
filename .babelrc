@@ -1,18 +1,43 @@
 {
   "presets": [
-    ["env", {
-      "modules": false,
-      "targets": {
-        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+    [
+      "env",
+      {
+        "loose": true,
+        "modules": false,
+        "targets": {
+          "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+        }
       }
-    }],
+    ],
     "stage-2"
   ],
-  "plugins": ["transform-vue-jsx", "transform-runtime"],
+  "plugins": ["transform-vue-jsx"],
   "env": {
+    "utils": {
+      "presets": [
+        [
+          "env",
+          {
+            "loose": true,
+            "modules": "commonjs",
+            "targets": {
+              "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+            }
+          }
+        ],
+      ],
+      "plugins": [
+        ["module-resolver", {
+          "root": ["element-ui"],
+          "alias": {
+            "element-ui/src": "element-ui/lib"
+          }
+        }]
+      ]
+    },
     "test": {
-      "presets": ["env", "stage-2"],
-      "plugins": ["transform-vue-jsx", "transform-es2015-modules-commonjs", "dynamic-import-node"]
+      "plugins": ["istanbul"]
     }
   }
 }
