@@ -1,6 +1,9 @@
 @import "mixins/mixins";
 @import "common/var";
 
+.test {
+	background: pink;
+}
 /*@include b(button) {
 
 }
