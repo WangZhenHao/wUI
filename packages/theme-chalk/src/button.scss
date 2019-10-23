@@ -1,9 +1,49 @@
 @import "mixins/mixins";
 @import "common/var";
+@import "./mixins/button";
 
-.test {
-	background: pink;
+@include b(button) {
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 14px;
+  border: $--border-base;
+  padding: 8px 16px;
+  border-radius: 4px;
+
+  &+& {
+    margin-left: 10px;
+  }
+
+  @include m(primary) {
+    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color)
+  }
+
+  @include m(success) {
+    @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color)
+  }
+
+  @include m(danger) {
+    @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color)
+  }
+
+  @include m(warning) {
+    @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color)
+  }
+
+  @include m(small) {
+    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius);
+  }
+
+  @include m(mini) {
+    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
+  }
 }
+
+
+
 /*@include b(button) {
 
 }

@@ -1,10 +1,15 @@
 {
-  "name": "w",
-  "main": "package/wUI.min.js",
-  "version": "1.0.0",
+  "name": "wang-ui-vue",
+  "main": "lib/w-ui.common.js",
+  "files": [
+    "lib",
+    "src",
+    "packages"
+  ],
+  "version": "1.0.1",
   "description": "A Vue.js project",
   "author": "a_boy <1471047476@qq.com>",
-  "private": true,
+  "private": false,
   "scripts": {
     "clean": "rimraf lib",
     "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",

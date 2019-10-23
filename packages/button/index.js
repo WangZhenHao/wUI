@@ -3,7 +3,7 @@ import Button from './src/main';
 // console.log(vue)
 
 Button.install = function(Vue) {
-	Vue.component(Button.name, Button);
+  Vue.component(Button.name, Button);
 };
 
 export default Button;

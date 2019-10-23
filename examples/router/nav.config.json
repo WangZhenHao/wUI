@@ -1,18 +1,12 @@
 {
-	"zh-CN": [
-		{
-			"name": "组件",
-			"groups": [
-				{
-					"groupName": "Basic",
-					"list": [
-            {
-            	"path": "/button",
-            	"title": "Button按钮"
-            }
-					]
-				}
-			]
-		}
-	]
+  "zh-CN": [{
+    "name": "组件",
+    "groups": [{
+      "groupName": "Basic",
+      "list": [{
+        "path": "/button",
+        "title": "Button按钮"
+      }]
+    }]
+  }]
 }

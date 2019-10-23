@@ -1,0 +1,38 @@
+//  !default表示默认值。给一个未通过 !default声明赋值的变量赋值，此时，如果变量已经被赋值，不会再被重新赋值;但是如果变量还没有被赋值，则会被赋予新的值。
+
+$--color-white: #fff !default;
+$--border-base: 1px solid #eee !default;
+$--color-success: #67C23A !default;
+$--color-primary: #409EFF !default;
+$--color-danger: #f56c6c !default;
+$--color-warning: #e6a23c !default;
+// $--button-small-font-size: 12px !default;
+
+
+$--button-primary-font-color:$--color-white;
+$--button-primary-background-color: $--color-primary !default;
+$--button-primary-border-color: $--color-primary !default;
+$--button-hover-tint-percent: 20% !default;
+
+$--button-success-font-color: $--color-white !default;
+$--button-success-background-color: $--color-success !default;
+$--button-success-border-color: $--color-success !default;
+
+
+$--button-danger-font-color: $--color-white !default;
+$--button-danger-background-color: $--color-danger !default;
+$--button-danger-border-color: $--color-danger !default;
+
+$--button-warning-font-color: $--color-white !default;
+$--button-warning-background-color: $--color-warning !default;
+$--button-warning-border-color: $--color-warning !default;
+
+$--button-small-padding-vertical: 8px !default;
+$--button-small-padding-horizontal: 18px !default;
+$--button-small-font-size: 12px !default;
+$--button-small-border-radius: 4px !default;
+
+$--button-mini-padding-vertical: 4px !default;
+$--button-mini-padding-horizontal: 10px !default;
+$--button-mini-font-size: 12px !default;
+$--button-mini-border-radius: 4px !default;
