@@ -21,7 +21,16 @@
 
     <div>
       <h4>多选框</h4>
-      <w-checkbox></w-checkbox>
+      <w-checkbox-group v-model="checkbox">
+        <w-checkbox>复选框1</w-checkbox>
+        <w-checkbox>复选框2</w-checkbox>
+      </w-checkbox-group>
+
+      <w-button
+        @click="test"
+        type="primary"
+        size="small"
+      >按钮</w-button>
     </div>
   </div>
 </template>
@@ -29,12 +38,14 @@
 export default {
   data() {
     return {
-
+      test1: false,
+      test2: true,
+      checkbox: []
     };
   },
   methods: {
     test() {
-      alert(1);
+      console.log(this.test1, this.test2);
     }
   }
 };

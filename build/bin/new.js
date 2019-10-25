@@ -1,5 +1,5 @@
 // 创建新的组件执行命令
-"node build/bin/new.js checkbox"
+"node build/bin/new.js checkbox && node build/bin/build-entry.js"
 
 
 process.on('exit', (e) => {
@@ -81,7 +81,7 @@ Files.forEach(file => {
 // 添加index.scss
 const sassPath = path.join(__dirname, '../../packages/theme-chalk/src/index.scss');
 // 先读取之前的scss内容，然后做拼接
-const sassImportText = `${fs.readFileSync(sassPath)} @import "./${componentname}.scss"`;
+const sassImportText = `${fs.readFileSync(sassPath)} @import "./${componentname}.scss;"`;
 
 fileSave(sassPath)
   .write(sassImportText, 'utf8')

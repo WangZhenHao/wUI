@@ -2,10 +2,12 @@
 
 import Button from '../packages/button/index.js';
 import Checkbox from '../packages/checkbox/index.js';
+import CheckboxGroup from '../packages/checkbox-group/index.js';
 
 const components = [
   Button,
-  Checkbox
+  Checkbox,
+  CheckboxGroup
 ];
 
 const install = function(Vue, opts = {}) {
@@ -22,6 +24,7 @@ export default {
 	version: '1.0.1',
 	install,
   Button,
-  Checkbox
+  Checkbox,
+  CheckboxGroup
 }
 

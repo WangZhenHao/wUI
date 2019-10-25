@@ -1,7 +1,7 @@
 //  !default表示默认值。给一个未通过 !default声明赋值的变量赋值，此时，如果变量已经被赋值，不会再被重新赋值;但是如果变量还没有被赋值，则会被赋予新的值。
 
 $--color-white: #fff !default;
-$--border-base: 1px solid #eee !default;
+$--border-base: 1px solid #d2cdcd !default;
 $--color-success: #67C23A !default;
 $--color-primary: #409EFF !default;
 $--color-danger: #f56c6c !default;
