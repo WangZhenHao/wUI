@@ -1,0 +1,38 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(checkbox) {
+  color: $--color-text-regular;
+  font-size: $--font-size-base;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 30px;
+
+  @include e(input) {
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  @include e(inner) {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+  }
+
+  @include e(original) {
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    margin: 0;
+  }
+}

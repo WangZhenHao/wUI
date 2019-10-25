@@ -6,7 +6,9 @@
       'w-button--' + type,
       'w-button--' + size
     ]"
-  >我是按钮</button>
+  >
+    <slot></slot>
+  </button>
 </template>
 
 <script>

@@ -6,10 +6,12 @@ $--color-success: #67C23A !default;
 $--color-primary: #409EFF !default;
 $--color-danger: #f56c6c !default;
 $--color-warning: #e6a23c !default;
-// $--button-small-font-size: 12px !default;
+$--color-text-regular: #606266 !default;
 
+$--font-size-base: 14px;
 
-$--button-primary-font-color:$--color-white;
+//button-----------------------
+$--button-primary-font-color: $--color-white;
 $--button-primary-background-color: $--color-primary !default;
 $--button-primary-border-color: $--color-primary !default;
 $--button-hover-tint-percent: 20% !default;
