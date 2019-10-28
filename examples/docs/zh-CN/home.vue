@@ -22,10 +22,9 @@
     <div>
       <h4>多选框</h4>
       <w-checkbox-group v-model="checkbox">
-        <w-checkbox>复选框1</w-checkbox>
-        <w-checkbox>复选框2</w-checkbox>
+        <w-checkbox label="复选框1">复选框1</w-checkbox>
+        <w-checkbox label="复选框2">复选框2</w-checkbox>
       </w-checkbox-group>
-
       <w-button
         @click="test"
         type="primary"
@@ -38,14 +37,14 @@
 export default {
   data() {
     return {
-      test1: false,
+      test1: true,
       test2: true,
-      checkbox: []
+      checkbox: ['复选框1']
     };
   },
   methods: {
     test() {
-      console.log(this.test1, this.test2);
+      console.log(this.checkbox);
     }
   }
 };

@@ -3,7 +3,6 @@
     class="w-checkbox"
     :class="{'is-checked': isChecked}"
   >
-    {{isGroup}}
     <span
       class="w-checkbox__input"
       :class="{'is-checked': isChecked}"
@@ -13,13 +12,12 @@
         class="w-checkbox__original"
         type="checkbox"
         v-model="model"
+        :value="label"
         @change="changeHandel"
       >
     </span>
     <span class="w-checkbox__label">
       <slot></slot>
-
-      <!-- <template v-if="!slots.default">{{label}}</template> -->
     </span>
   </label>
 </template>
@@ -39,21 +37,30 @@ export default {
   },
   data() {
     return {
-      selfModel: false,
-      model: false
+      selfModel: false
     };
   },
   computed: {
-    // model: {
-    //   get() {
-    //     return this.value !== undefined ? this.value : this.selfModel;
-    //   },
-    //   set(val) {
-    //     this.selfModel = val;
-    //   }
-    // },
+    // 这个model其实就是相当于group的v-model是 一个数组类型的数据
+    model: {
+      get() {
+        return this.isGroup ? this.store : this.value;
+      },
+      set(val) {
+        if (this.isGroup) {
+          this.dispatch('wCheckboxGroup', 'input', [val]);
+        } else {
+          this.$emit('input', val);
+        }
+      }
+    },
     isChecked() {
-      return this.model;
+      if (Array.isArray(this.model)) {
+        return this.model.indexOf(this.label) > -1;
+        // eslint-disabled
+      } else if (Object.prototype.toString.call(this.model) === '[object Boolean]') {
+        return this.model;
+      }
     },
     isGroup() {
       let parent = this.$parent;
@@ -66,16 +73,20 @@ export default {
         }
       }
       return false;
+    },
+    store() {
+      return this._checkboxGroup ? this._checkboxGroup.value : this.value;
     }
   },
   mounted() {
-    this.model = this.value;
+
   },
   methods: {
     changeHandel(ev) {
-      let value = ev.target.checked;
-      this.model = value;
-      this.$emit('input', value, ev);
+      this.$emit('change', ev.target.checked, ev);
+      if (this.isGroup) {
+        this.dispatch('wCheckboxGroup', 'change', [this._checkboxGroup.value]);
+      }
     }
 
   }
